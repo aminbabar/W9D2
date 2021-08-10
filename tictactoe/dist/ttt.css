@@ -1,15 +1,15 @@
-
-
 ul {
     display: flex;
-    width: 100px;
+    width: 370px;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 
 ul > li {
     margin: 10px;
-    border: 10px solid black;
+    border: 1px solid black;
+    padding: 50px;
 }
 
 .unclicked {

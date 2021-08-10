@@ -25,7 +25,7 @@ eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\")/
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, el) {\n    el.appendChild(this.setupBoard());\n  }\n\n  setupBoard() {\n    const ul = document.createElement('ul');\n    for (let i = 1; i < 10; i++) {\n      const li = document.createElement('li');\n      li.classList.add(`${i}`);\n      ul.appendChild(li);\n    }\n    return ul;\n  }\n  // [[0,0]. [0, 1]...]\n  bindEvents() {\n\n  }\n\n  handleClick(e) {\n\n  }\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack://tictactoe/./src/ttt-view.js?");
+eval("class View {\n  constructor(game, el) {\n    el.appendChild(this.setupBoard());\n    this.el = el;\n  }\n\n  setupBoard() {\n    const ul = document.createElement('ul');\n    for (let i = 1; i < 10; i++) {\n      const li = document.createElement('li');\n      li.classList.add(`${i}`, 'unclicked');\n      // li.classList.add('unclicked');\n      ul.appendChild(li);\n    }\n    return ul;\n  }\n  // [[0,0]. [0, 1]...]\n  bindEvents() {\n    let ul = document.querySelector('ul');\n    ul.addEventListener('click', this.handleClick)\n  }\n\n  handleClick(e) {\n\n  }\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack://tictactoe/./src/ttt-view.js?");
 
 /***/ }),
 
