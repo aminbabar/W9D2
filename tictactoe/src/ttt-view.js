@@ -1,5 +1,7 @@
 class View {
-  constructor(game, el) {}
+  constructor(game, el) {
+    el.appendChild(this.setupBoard());
+  }
 
   setupBoard() {
     const ul = document.createElement('ul');
@@ -8,11 +10,16 @@ class View {
       li.classList.add(`${i}`);
       ul.appendChild(li);
     }
+    return ul;
   }
-  
-  bindEvents() {}
+  // [[0,0]. [0, 1]...]
+  bindEvents() {
 
-  handleClick(e) {}
+  }
+
+  handleClick(e) {
+
+  }
 
   makeMove(square) {}
 

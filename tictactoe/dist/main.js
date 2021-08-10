@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\")// require appropriate file\nconst Game = __webpack_require__(/*! ../ttt_node/game */ \"./ttt_node/game.js\")// require appropriate file\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  let game = new Game();\n  let view = new View(game)\n\n  const figure = document.querySelector('.ttt');\n});\n\n\n//# sourceURL=webpack://tictactoe/./src/index.js?");
+eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\")// require appropriate file\nconst Game = __webpack_require__(/*! ../ttt_node/game */ \"./ttt_node/game.js\")// require appropriate file\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  let game = new Game();\n  \n  const figure = document.querySelector('.ttt');\n  let view = new View(game, figure)\n});\n\n\n//# sourceURL=webpack://tictactoe/./src/index.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\")/
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, el) {}\n\n  setupBoard() {\n    const ul = document.createElement('ul');\n    for (let i = 1; i < 10; i++) {\n      const li = document.createElement('li');\n      li.classList.add(`${i}`);\n      ul.appendChild(li);\n    }\n  }\n  \n  bindEvents() {}\n\n  handleClick(e) {}\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack://tictactoe/./src/ttt-view.js?");
+eval("class View {\n  constructor(game, el) {\n    el.appendChild(this.setupBoard());\n  }\n\n  setupBoard() {\n    const ul = document.createElement('ul');\n    for (let i = 1; i < 10; i++) {\n      const li = document.createElement('li');\n      li.classList.add(`${i}`);\n      ul.appendChild(li);\n    }\n    return ul;\n  }\n  // [[0,0]. [0, 1]...]\n  bindEvents() {\n\n  }\n\n  handleClick(e) {\n\n  }\n\n  makeMove(square) {}\n\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack://tictactoe/./src/ttt-view.js?");
 
 /***/ }),
 
