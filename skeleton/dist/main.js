@@ -19,6 +19,16 @@ eval("const htmlGenerator = __webpack_require__(/*! ./warmUp */ \"./src/warmUp.j
 
 /***/ }),
 
+/***/ "./src/drop_down.js":
+/*!**************************!*\
+  !*** ./src/drop_down.js ***!
+  \**************************/
+/***/ ((module) => {
+
+eval("\nconst dogs = {\n  \"Corgi\": \"https://www.akc.org/dog-breeds/cardigan-welsh-corgi/\",\n  \"Australian Shepherd\": \"https://www.akc.org/dog-breeds/australian-shepherd/\",\n  \"Affenpinscher\": \"https://www.akc.org/dog-breeds/affenpinscher/\",\n  \"American Staffordshire Terrier\": \"https://www.akc.org/dog-breeds/american-staffordshire-terrier/\",\n  \"Tosa\": \"https://www.akc.org/dog-breeds/tosa/\",\n  \"Labrador Retriever\": \"https://www.akc.org/dog-breeds/labrador-retriever/\",\n  \"French Bulldog\": \"https://www.akc.org/dog-breeds/french-bulldog/\" \n};\n\nfunction dogLinkCreator () {\n  const keys = Object.keys(dogs);\n  const liArray = []\n  keys.forEach((key) => {\n    let a = document.createElement('a');\n    a.innerHTML = key;\n    a.href = dogs[key];\n    let li = document.createElement('li');\n    li.appendChild(a);\n    liArray.push(li);\n  })\n}\n\nfunction attachDogLinks () {\n  // debugger;\n  let dogLinks = dogLinkCreator();\n  let dogUl = document.querySelector('.drop-down-dog-list');\n  dogLinks.forEach ((dog) =>{\n    dogUl.appendChild(doglink);\n  })\n}\n// debugger;\nattachDogLinks();\n\nmodule.exports = attachDogLinks; \n\n//# sourceURL=webpack://skeleton/./src/drop_down.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -26,7 +36,7 @@ eval("const htmlGenerator = __webpack_require__(/*! ./warmUp */ \"./src/warmUp.j
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clock */ \"./src/clock.js\");\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_0__);\n// import htmlGenerator from \"./warmup\";\n\nconst htmlGenerator = __webpack_require__(/*! ./warmUp */ \"./src/warmUp.js\")\n\n// debugger;\n;\n\n\n\n\n\n\n//# sourceURL=webpack://skeleton/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clock */ \"./src/clock.js\");\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_0__);\n// import htmlGenerator from \"./warmup\";\n// debugger;\nconsole.log('hello!')\nconst htmlGenerator = __webpack_require__(/*! ./warmUp */ \"./src/warmUp.js\")\nconst attachDogLinks = __webpack_require__(/*! ./drop_down */ \"./src/drop_down.js\")\n\n\n;\n\n\n\n\n\n\n//# sourceURL=webpack://skeleton/./src/index.js?");
 
 /***/ }),
 
