@@ -31,18 +31,28 @@ class View {
     let className = e.target.classList[0];
     let square = e.target;
     let positions = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2,0], [2,1], [2,2]]
-    // debugger;
-    square.innerText = this.game.currentPlayer;
-    this.game.playMove(positions[parseInt(className)]);
-    this.makeMove(square);
-  }
+    if (!square.innerText){
+      square.innerText = this.game.currentPlayer;
+      this.game.playMove(positions[parseInt(className)]);
+      this.makeMove(square);
+    }} 
 
   makeMove(square) {
     square.classList.add("clicked");
     
     // console.log(this.game.winner());
     if (this.game.winner()) {
-      
+      let ul = document.querySelector('ul');
+      ul.classList.add('gameOver');
+      let p = document.createElement('p');
+      p.innerText = `${this.game.winner()} has won!`;
+      this.el.appendChild(p);
+    } else if (this.game.isOver()) {
+      let ul = document.querySelector('ul');
+      ul.classList.add('gameOver');
+      let p = document.createElement('p');
+      p.innerText = 'The game ends in a draw.';
+      this.el.appendChild(p);
     }
   }
 
