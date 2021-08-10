@@ -20,14 +20,16 @@ function dogLinkCreator () {
     li.appendChild(a);
     liArray.push(li);
   })
+  return liArray;
 }
 
 function attachDogLinks () {
   // debugger;
   let dogLinks = dogLinkCreator();
   let dogUl = document.querySelector('.drop-down-dog-list');
+
   dogLinks.forEach ((dog) =>{
-    dogUl.appendChild(doglink);
+    dogUl.appendChild(dog);
   })
 }
 // debugger;
